@@ -7,7 +7,7 @@ modules to include.
 
 See INSTALL for installation instructions.
 
-To generate documentation, go to the doc folder and run ./make_doc.sh.
+To generate documentation, go to the doc folder and run ./make\_doc.sh.
 This will build html documentation files from python doc strings which
 will include descriptions of each module, their intentions, model
 components they define, and what input files they expect.
@@ -18,7 +18,10 @@ To test the entire codebase, run this command from the root directory:
 
 EXAMPLES
 To run an example, navigate to an example directory and run the command:
+
+```bash
 	switch solve --verbose --log-run
+```
 
 CONFIGURING YOUR OWN MODELS
 
@@ -27,20 +30,20 @@ and a set of input files to provide the data. The SWITCH framework and
 individual modules also accept command-line arguments to change their behavior.
 
 Each SWITCH model or collection of models is defined in a specific directory
-(e.g., examples/3zone_toy). This directory contains one or more subdirectories
+(e.g., examples/3zone\_toy). This directory contains one or more subdirectories
 that hold input data and results (e.g., "inputs" and "outputs"). The models in
 the examples directory show the type of text files used to provide inputs for a
-model. You can change any of the model's input data by editing the *.tab files
+model. You can change any of the model's input data by editing the \*.tab files
 in the input directory.
 
 SWITCH contains a number of different modules, which can be selected and
 combined to create models with different capabilities and amounts of detail.
-You can look through the *.py files within switch_mod and its subdirectories to
+You can look through the \*.py files within switch\_mod and its subdirectories to
 see the standard modules that are available and the columns that each one will
 read from the input files. You can also add modules of your own by creating
 Python files in the main model directory and adding their name (without the
 ".py") to the module list, discussed below. These should define the same
-functions as the standard modules (e.g., define_components()).
+functions as the standard modules (e.g., define\_components()).
 
 Each model has a text file which lists the modules that will be used for that
 model. Normally this file is called "modules.txt" and is stored in the main
