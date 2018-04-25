@@ -12,15 +12,18 @@ This will build html documentation files from python doc strings which
 will include descriptions of each module, their intentions, model
 components they define, and what input files they expect.
 
-TESTING
+## TESTING
 To test the entire codebase, run this command from the root directory:
-	python run_tests.py
 
-EXAMPLES
+```bash
+python run\_tests.py
+```
+
+## EXAMPLES
 To run an example, navigate to an example directory and run the command:
 
 ```bash
-	switch solve --verbose --log-run
+switch solve --verbose --log-run
 ```
 
 CONFIGURING YOUR OWN MODELS
