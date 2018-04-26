@@ -34,7 +34,7 @@ setup(
     license='Apache v2',
     platforms=["any"],
     description='SWITCH Power System Planning Model',
-    long_description=read('README'),
+    long_description=read('README.md'),
     classifiers=[
     'Development Status :: 4 - Beta',
     'Environment :: Console',
