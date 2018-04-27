@@ -23,7 +23,7 @@ def define_components(mod):
     mod.dg_PERIODS = Set(validate=lambda m, p: p in m.PERIODS)
 
     # Read the targets to enforce
-    mod.dg_targets = Param(
+    mod.dg_min_target_capacity_mw = Param(
             mod.dg_PERIODS,
             )
 
@@ -50,8 +50,7 @@ def define_components(mod):
     # Enforce the constrain
     mod.Enfoce_dg = Constraint(
             mod.dg_PERIODS,
-            rule=lambda m, p: m.dg_capacity[p] >= m.dg_targets[p] *
-            m.capacity_period[p]
+            rule=lambda m, p: m.dg_capacity[p] >= m.dg_min_target_capacity_mw[p]
             )
 
 def load_inputs(mod, switch_data, inputs_dir, ext='.csv'):
@@ -64,7 +63,7 @@ def load_inputs(mod, switch_data, inputs_dir, ext='.csv'):
         filename=file_path,
         autoselect=True,
         index=mod.dg_PERIODS,
-        param=(mod.dg_targets,)
+        param=(mod.dg_min_target_capacity_mw,)
         )
 
 #  def post_solve(instance, outdir):
